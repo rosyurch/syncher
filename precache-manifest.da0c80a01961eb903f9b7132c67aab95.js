@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f8b9629bc1ec1a03e5049a895721ec85",
+    "revision": "5754ae34ba2f7ae944206435a62a7f99",
     "url": "/syncher/index.html"
   },
   {
-    "revision": "3065783274d9fdb6057b",
+    "revision": "01cc94ed26ca7a65dc83",
     "url": "/syncher/static/css/main.34de6062.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/syncher/static/js/2.678f99dc.chunk.js"
   },
   {
-    "revision": "3065783274d9fdb6057b",
-    "url": "/syncher/static/js/main.76f3deed.chunk.js"
+    "revision": "01cc94ed26ca7a65dc83",
+    "url": "/syncher/static/js/main.7fe63ca8.chunk.js"
   },
   {
     "revision": "8ebcaf64fe20ae0e5833",
