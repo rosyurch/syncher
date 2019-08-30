@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/syncher/static/css/main.34de6062.chunk.css",
+    "main.js": "/syncher/static/js/main.76f3deed.chunk.js",
+    "main.js.map": "/syncher/static/js/main.76f3deed.chunk.js.map",
+    "runtime~main.js": "/syncher/static/js/runtime~main.1b7b1c2e.js",
+    "runtime~main.js.map": "/syncher/static/js/runtime~main.1b7b1c2e.js.map",
+    "static/js/2.678f99dc.chunk.js": "/syncher/static/js/2.678f99dc.chunk.js",
+    "static/js/2.678f99dc.chunk.js.map": "/syncher/static/js/2.678f99dc.chunk.js.map",
+    "index.html": "/syncher/index.html",
+    "precache-manifest.00872c702e93b6d0fa10192d5f7dee96.js": "/syncher/precache-manifest.00872c702e93b6d0fa10192d5f7dee96.js",
+    "service-worker.js": "/syncher/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/syncher/static/css/main.34de6062.chunk.css.map"
+  }
+}
