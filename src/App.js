@@ -35,17 +35,14 @@ function App() {
 
     const getData = async () => {
         const res = await fetch('https://api.github.com/gists/c3f3f735a28b010bfcbff2ecf56c72a9');
-        // const res = await fetch('http://127.0.0.1:4321/chgkinfo', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'text/plain',
-        //     },
-        //     body: 'edb8e45f64b03144b39cd91b0678e3e1',
-        // });
         const data = await res.json();
-        // console.log(JSON.parse(data.files['chgk-data.json'].content));
         const { updated, yourReqs, synchs } = JSON.parse(data.files['chgk-data.json'].content);
-        setLastUpd(updated);
+        const u = new Date(updated);
+
+        setLastUpd(
+            `${u.getHours()}:${u.getMinutes().toString().length < 2 ? '0' + u.getMinutes() : u.getMinutes()}:${u.getSeconds()} ${u.getDate()}-${u.getMonth() +
+                1}-${u.getFullYear()}`
+        );
         setRequests(yourReqs);
         setTourns(synchs);
     };
