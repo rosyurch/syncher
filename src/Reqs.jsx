@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// inactive for now
+
 const Ul = styled.ul`
     margin: 20px 0;
     padding: 0;
