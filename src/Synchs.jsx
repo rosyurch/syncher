@@ -92,8 +92,14 @@ function Synchs(props) {
                                     ))}
                             </div>
                             <Links>
-                                <A href={tourn.link}>Link </A>
-                                {tourn.applicationAppealLink && <A href={tourn.applicationAppealLink}>Заявка/апель</A>}
+                                <A href={tourn.link} target="_blank">
+                                    Link
+                                </A>
+                                {tourn.applicationAppealLink && (
+                                    <A target="_blank" href={tourn.applicationAppealLink}>
+                                        Заявка/апель
+                                    </A>
+                                )}
                             </Links>
                         </Li>
                     ))}
