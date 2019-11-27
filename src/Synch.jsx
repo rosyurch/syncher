@@ -1,75 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Li = styled.li`
-    margin: 10px 5px 0 5px;
-    padding: 5px;
-    border: 1px solid goldenrod;
-    border-radius: 20px;
-`;
-
-const Editor = styled.div`
-    font-size: 0.9em;
-    width: 60%;
-    margin: 0 auto;
-    text-align: left;
-    @media (max-width: 700px) {
-        width: 95%;
-    }
-`;
-
-const Info = styled.div`
-    color: goldenrod;
-    font-weight: 500;
-`;
-
-const H = styled.h3`
-    margin: 0;
-    padding: 0;
-`;
-
-const Links = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-`;
-
-const A = styled.a`
-    text-decoration: none;
-    color: #99f;
-    &:hover,
-    :active {
-        background-color: #fff;
-        color: #000;
-    }
-`;
+import './synch.css';
 
 function Synch(props) {
     const { nameTime, type, questions, price, editors, link, applicationAppealLink } = props;
     return (
-        <Li>
-            <H>{nameTime}</H>
-            <Info>
+        <li className="list-item">
+            <h3 className="header">{nameTime}</h3>
+            <div className="info">
                 {type} / {questions} / {price}
-            </Info>
+            </div>
             <div>
                 {editors
                     .split(')')
                     .slice(0, -1)
                     .map(edit => (
-                        <Editor key={edit}>{edit ? edit + ')' : ''}</Editor>
+                        <div className="editor" key={edit}>
+                            {edit ? edit + ')' : ''}
+                        </div>
                     ))}
             </div>
-            <Links>
-                <A href={link} target="_blank" rel="noreferrer">
+            <div className="links">
+                <a className="link" href={link} target="_blank" rel="noopener noreferrer">
                     Link
-                </A>
+                </a>
                 {applicationAppealLink && (
-                    <A target="_blank" rel="noreferrer" href={applicationAppealLink}>
+                    <a className="link" target="_blank" rel="noopener noreferrer" href={applicationAppealLink}>
                         Заявка/апель
-                    </A>
+                    </a>
                 )}
-            </Links>
-        </Li>
+            </div>
+        </li>
     );
 }
 

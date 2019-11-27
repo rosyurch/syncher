@@ -1,0 +1,19 @@
+.app {
+    color: #fff;
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+}
+
+.last-update {
+    margin-right: 10px;
+    text-align: right;
+    font-size: 1em;
+}
+
+@media (min-width: 900px) {
+    .app {
+        width: 70%;
+        margin: 0 auto;
+    }
+}

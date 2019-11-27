@@ -1,31 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import Synchs from './Synchs';
-
-const Wrap = styled.div`
-    background-color: #282c34;
-`;
-
-const Div = styled.div`
-    color: #fff;
-    text-align: center;
-    background-color: #282c34;
-    min-height: 100vh;
-    @media (min-width: 900px) {
-        width: 70%;
-        margin: 0 auto;
-    }
-`;
-
-const Upd = styled.div`
-    margin-right: 10px;
-    text-align: right;
-    font-size: 1em;
-`;
-
-const Header = styled.header`
-    font-size: 2em;
-`;
+import './app.css';
 
 const months = {
     января: '01',
@@ -76,16 +51,16 @@ function App() {
     }, []);
 
     return (
-        <Wrap>
-            <Div className="App">
-                <Header className="App-header">Synchs</Header>
-                <Upd>Last update: {lastUpd}</Upd>
+        <div className="wrap">
+            <div className="app">
+                <header className="header">Synchs</header>
+                <div className="last-update">Last update: {lastUpd}</div>
                 <hr />
                 <main>
                     <Synchs tourns={tourns} />
                 </main>
-            </Div>
-        </Wrap>
+            </div>
+        </div>
     );
 }
 
