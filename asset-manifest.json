@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/syncher/static/css/main.34de6062.chunk.css",
-    "main.js": "/syncher/static/js/main.d832fe34.chunk.js",
-    "main.js.map": "/syncher/static/js/main.d832fe34.chunk.js.map",
+    "main.css": "/syncher/static/css/main.0e1e86d3.chunk.css",
+    "main.js": "/syncher/static/js/main.ccf3c12e.chunk.js",
+    "main.js.map": "/syncher/static/js/main.ccf3c12e.chunk.js.map",
     "runtime~main.js": "/syncher/static/js/runtime~main.1b7b1c2e.js",
     "runtime~main.js.map": "/syncher/static/js/runtime~main.1b7b1c2e.js.map",
-    "static/js/2.678f99dc.chunk.js": "/syncher/static/js/2.678f99dc.chunk.js",
-    "static/js/2.678f99dc.chunk.js.map": "/syncher/static/js/2.678f99dc.chunk.js.map",
+    "static/js/2.7745f530.chunk.js": "/syncher/static/js/2.7745f530.chunk.js",
+    "static/js/2.7745f530.chunk.js.map": "/syncher/static/js/2.7745f530.chunk.js.map",
     "index.html": "/syncher/index.html",
-    "precache-manifest.d87d96878a0d4c757f753be772bebac9.js": "/syncher/precache-manifest.d87d96878a0d4c757f753be772bebac9.js",
+    "precache-manifest.4444d99685e7f2d52fac829dedc312a3.js": "/syncher/precache-manifest.4444d99685e7f2d52fac829dedc312a3.js",
     "service-worker.js": "/syncher/service-worker.js",
-    "static/css/main.34de6062.chunk.css.map": "/syncher/static/css/main.34de6062.chunk.css.map"
+    "static/css/main.0e1e86d3.chunk.css.map": "/syncher/static/css/main.0e1e86d3.chunk.css.map"
   }
 }
