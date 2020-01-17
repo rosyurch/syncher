@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Synch from './Synch';
 import './synchs.css';
 
-const now = new Date();
+// const now = new Date();
 
 function Synchs(props) {
     const [query, setQuery] = useState('');
-    const [endDate, setEndDate] = useState(now);
+    // const [endDate, setEndDate] = useState(now);
 
     const { tourns } = props;
 
@@ -23,7 +23,7 @@ function Synchs(props) {
                     }}
                 />
 
-                <input
+                {/* <input
                     className="input-date"
                     aria-label="date filtering"
                     type="date"
@@ -31,15 +31,11 @@ function Synchs(props) {
                         if (event.target.value === '') setEndDate(now);
                         else setEndDate(new Date(event.target.value));
                     }}
-                />
+                /> */}
             </form>
             <ul className="ul">
                 {tourns
-                    .filter(
-                        tourn =>
-                            tourn.endDate > endDate &&
-                            (tourn.nameTime.toLowerCase().includes(query.toLowerCase()) || tourn.editors.toLowerCase().includes(query.toLowerCase()))
-                    )
+                    .filter(tourn => tourn.nameTime.toLowerCase().includes(query.toLowerCase()) || tourn.editors.toLowerCase().includes(query.toLowerCase()))
                     .map(tourn => (
                         <Synch {...tourn} key={tourn.nameTime} />
                     ))}
