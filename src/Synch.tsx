@@ -1,8 +1,17 @@
 import React from 'react';
 import './synch.css';
 
-function Synch(props) {
-    const { nameTime, type, questions, price, editors, link, applicationAppealLink } = props;
+type Tourn = {
+    applicationAppealLink: string | null;
+    editors: string;
+    link: string;
+    nameTime: string;
+    price: string;
+    questions: string;
+    type: string;
+};
+
+function Synch({ nameTime, type, questions, price, editors, link, applicationAppealLink }: Tourn) {
     return (
         <li className="list-item">
             <h3 className="header">{nameTime}</h3>

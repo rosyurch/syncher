@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import Synch from './Synch';
 import './synchs.css';
+import { Tourn } from './types';
 
 // const now = new Date();
 
-function Synchs(props) {
+function Synchs({ tourns }: Tourn[]) {
     const [query, setQuery] = useState('');
     // const [endDate, setEndDate] = useState(now);
 
-    const { tourns } = props;
+    // const { tourns } = props;
 
     return (
         <>
@@ -35,8 +36,11 @@ function Synchs(props) {
             </form>
             <ul className="ul">
                 {tourns
-                    .filter(tourn => tourn.nameTime.toLowerCase().includes(query.toLowerCase()) || tourn.editors.toLowerCase().includes(query.toLowerCase()))
-                    .map(tourn => (
+                    .filter(
+                        (tourn: Tourn) =>
+                            tourn.nameTime.toLowerCase().includes(query.toLowerCase()) || tourn.editors.toLowerCase().includes(query.toLowerCase())
+                    )
+                    .map((tourn: Tourn) => (
                         <Synch {...tourn} key={tourn.nameTime} />
                     ))}
             </ul>

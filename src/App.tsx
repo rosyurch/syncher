@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Synchs from './Synchs';
 import './app.css';
+import { Tourn } from './types';
 
 // const months = {
 //     января: '01',
@@ -17,8 +18,12 @@ import './app.css';
 //     декабря: '12',
 // };
 
+// interface State {
+//     tourns: Tourn[];
+// }
+
 function App() {
-    const [tourns, setTourns] = useState([]);
+    const [tourns, setTourns] = useState<Tourn[]>([]);
     const [lastUpd, setLastUpd] = useState('');
 
     const getData = async () => {
@@ -27,8 +32,8 @@ function App() {
         const { updated, synchs } = JSON.parse(data.files['chgk.json'].content);
         const u = new Date(updated);
 
+        // // manipulation for date conversion
         // synchs.forEach(s => {
-        //     // console.log(s);
 
         //     const endDateString = s.nameTime
         //         .slice(s.nameTime.lastIndexOf('(') + 1, s.nameTime.lastIndexOf(')'))
