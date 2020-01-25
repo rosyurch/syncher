@@ -18,18 +18,15 @@ import { Tourn } from './types';
 //     декабря: '12',
 // };
 
-// interface State {
-//     tourns: Tourn[];
-// }
-
 function App() {
+    // maybe add some generics
     const [tourns, setTourns] = useState<Tourn[]>([]);
     const [lastUpd, setLastUpd] = useState('');
 
     const getData = async () => {
         const res = await fetch('https://api.github.com/gists/2be45373cfe2010ebc4581abac7cb3cf');
         const data = await res.json();
-        const { updated, synchs } = JSON.parse(data.files['chgk.json'].content);
+        const { updated, synchs }: { updated: string; synchs: Tourn[] } = JSON.parse(data.files['chgk.json'].content);
         const u = new Date(updated);
 
         // // manipulation for date conversion

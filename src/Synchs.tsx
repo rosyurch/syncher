@@ -5,7 +5,8 @@ import { Tourn } from './types';
 
 // const now = new Date();
 
-function Synchs({ tourns }: Tourn[]) {
+function Synchs({ tourns }: any) {
+    // todo: fix this `any`
     const [query, setQuery] = useState('');
     // const [endDate, setEndDate] = useState(now);
 
