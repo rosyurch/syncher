@@ -7,7 +7,7 @@ const now = new Date();
 function Synchs({ tourns }) {
     // todo: fix this `any`
     const [query, setQuery] = useState('');
-    const [endDate, setEndDate] = useState(now);
+    const [searchDate, setSearchDate] = useState(now);
 
     // const { tourns } = props;
 
@@ -29,8 +29,8 @@ function Synchs({ tourns }) {
                     aria-label="date filtering"
                     type="date"
                     onChange={event => {
-                        if (event.target.value === '') setEndDate(now);
-                        else setEndDate(new Date(event.target.value));
+                        if (event.target.value === '') setSearchDate(now);
+                        else setSearchDate(new Date(event.target.value));
                     }}
                 />
             </form>
@@ -38,7 +38,8 @@ function Synchs({ tourns }) {
                 {tourns
                     .filter(
                         tourn =>
-                            tourn.endDate > endDate &&
+                            tourn.endDate > searchDate &&
+                            tourn.startDate < searchDate &&
                             (tourn.nameTime.toLowerCase().includes(query.toLowerCase()) || tourn.editors.toLowerCase().includes(query.toLowerCase()))
                     )
                     .map(tourn => (
