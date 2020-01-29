@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Synchs from './Synchs';
 import './app.css';
 
+function getDateFromString(dateStr) {
+    const formattedTimeDate = dateStr.split(' '); //['28', 'июля', '2019']
+    const monthLiteral = formattedTimeDate[1]; // 'июля'
+    const monthNuber = monthLiteral.replace(monthLiteral, months[monthLiteral]); // 'июля' -> '07'
+    const dateFinal = [formattedTimeDate[2], monthNuber, formattedTimeDate[0]].join('-'); // '2019-07-28'
+
+    return new Date(dateFinal);
+}
+
 const months = {
     января: '01',
     февраля: '02',
@@ -31,39 +40,30 @@ function App() {
         // manipulation for date conversion
         synchs.forEach(s => {
             if (s.nameTime.slice(s.nameTime.lastIndexOf('(') + 1, s.nameTime.lastIndexOf(')')).split('-')[1]) {
-                // console.log(s.nameTime);
-
                 const endDateString = s.nameTime
                     .slice(s.nameTime.lastIndexOf('(') + 1, s.nameTime.lastIndexOf(')'))
                     .split('-')[1]
                     .trim();
 
-                const formattedEndDate = endDateString.split(' '); //['28', 'июля', '2019']
-                const monthLiteral = formattedEndDate[1]; // 'июля'
-                const monthNuber = monthLiteral.replace(monthLiteral, months[monthLiteral]); // 'июля' -> '07'
-                const dateFinal = [formattedEndDate[2], monthNuber, formattedEndDate[0]].join('-'); // '2019-07-28'
-                s.endDate = new Date(dateFinal);
-                // console.log(s.endDate.setDay);
+                s.endDate = getDateFromString(endDateString);
 
                 {
                     const startDateString = s.nameTime
                         .slice(s.nameTime.lastIndexOf('(') + 1, s.nameTime.lastIndexOf(')'))
                         .split('-')[0]
                         .trim();
-                    // console.log(startDateString);
+
                     if (startDateString.length <= 2) {
                         const tmpDate = new Date(s.endDate.getTime()); // avoid mutating endDate
+
                         s.startDate = new Date(tmpDate.setDate(Number(startDateString)));
                     } else if (startDateString.split(' ').length === 2) {
                         const monthLiteral = startDateString.split(' ')[1];
-                        const tmpDate = new Date(s.endDate.getTime());
+                        const tmpDate = new Date(s.endDate.getTime()); // avoid mutating endDate
+
                         s.startDate = new Date(tmpDate.setMonth(Number(months[monthLiteral]) - 1, Number(startDateString.split(' ')[0])));
                     } else {
-                        const formattedStartDate = startDateString.split(' '); //['28', 'июля', '2019']
-                        const monthLiteral = formattedStartDate[1]; // 'июля'
-                        const monthNuber = monthLiteral.replace(monthLiteral, months[monthLiteral]); // 'июля' -> '07'
-                        const dateFinal = [formattedStartDate[2], monthNuber, formattedStartDate[0]].join('-'); // '2019-07-28'
-                        s.startDate = new Date(dateFinal);
+                        s.startDate = getDateFromString(startDateString);
                     }
                 }
             }
